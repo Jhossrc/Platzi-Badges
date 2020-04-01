@@ -7,6 +7,7 @@ container.append(element); */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Badge from './components/Badge';
+import './bootstrap'
 
 const container = document.getElementById('app')
 
