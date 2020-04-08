@@ -5,9 +5,6 @@ import './style/Badge.css'
 class Badge extends React.Component {
     render() {
 
-        const firstName = 'José';
-        const lastName = 'Robles';
-
         return (
             <div className="Badge">
                 <div className="Badge__header">
