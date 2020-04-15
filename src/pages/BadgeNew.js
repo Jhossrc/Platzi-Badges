@@ -7,6 +7,36 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
 class BadgeNew extends React.Component {
+
+    state = {
+        form: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            jobTitle: '',
+            twitter: ''
+        }
+    }
+
+    handleChange = e => {
+
+        /* const nextForm = this.state.form
+        nextForm[e.target.name] = e.target.value; */
+
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+
+            //form: nextForm
+
+            /* form: {
+                [e.target.name]: e.target.value
+            } */
+        })
+    }
+
     render() {
         return (
             <div>
@@ -17,7 +47,7 @@ class BadgeNew extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        <div className="col">
+                        <div className="col-6">
                             <Badge
                                 firstName="José" 
                                 lastName="Robles" 
@@ -27,8 +57,10 @@ class BadgeNew extends React.Component {
                             />
                         </div>
 
-                        <div className="col">
-                            <BadgeForm/>
+                        <div className="col-6">
+                            <BadgeForm onChange={this.handleChange}
+                                       formValues={this.state.form}
+                            />
                         </div>
                     </div>
                 </div>

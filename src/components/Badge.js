@@ -3,6 +3,7 @@ import confLogo from '../images/badge-header.svg'
 import './style/Badge.css'
 
 class Badge extends React.Component {
+
     render() {
 
         return (
