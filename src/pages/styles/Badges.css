@@ -1,0 +1,67 @@
+.Badges__hero {
+    width: 100%;
+    padding: 2rem 0;
+    background: url('../../images/stars.svg'), #1B1B25;
+    background-repeat: repeat;
+    margin-bottom: 1rem;
+  }
+  
+  .Badges__hero>.Badges__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Badges__container {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .Badges_conf-logo {
+    margin-bottom: 2rem;
+  }
+  
+  .Badges__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+/* My Style */
+
+.jr_badge_container {
+  border-radius: 15px;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  background-color: #fff;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px 0 rgba(158,158,158,1);
+}
+
+.jr_badge_avatar {
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.jr_badge_info {
+  padding: 5px;
+}
+
+.jr_badge_name {
+  margin: 0;
+  font-weight: 800;
+}
+
+.jr_badge_twitter {
+  margin: 0;
+  color: #1DA1F2;
+}
+
+.jr_shadow {
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75) !important;
+}
