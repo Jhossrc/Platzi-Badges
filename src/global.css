@@ -5,11 +5,14 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: 'Lato', 'Helvetica Neue', sans-serif;
   background-color: #F4F4F7;
+  min-height: 100vh;
 }
 
 h1 {
