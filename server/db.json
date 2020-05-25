@@ -440,6 +440,24 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "avatarUrl": "https://www.gravatar.com/avatar/571da70bf67d1f13b61a1d34eca4d8ad?d=identicon",
+      "firstName": "José",
+      "lastName": "Robles",
+      "email": "kuro.rc10@gmail.com",
+      "jobTitle": "Frontend Developer",
+      "twitter": "jossrc10",
+      "id": "EmZbMC4"
+    },
+    {
+      "avatarUrl": "https://www.gravatar.com/avatar/6692844e301f5576e18a4e9886f93084?d=identicon",
+      "firstName": "Alex",
+      "lastName": "Lopez",
+      "email": "alexlop@gmail.com",
+      "jobTitle": "Google Developer Expert",
+      "twitter": "alexlp",
+      "id": "nazVW68"
     }
   ]
 }
