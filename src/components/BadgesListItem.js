@@ -2,7 +2,7 @@ import React from 'react'
 
 function BadgesListItem(props) {
     return (
-        <div key={props.badge.id} className='jr_badge_container'>
+        <div className='jr_badge_container'>
           <img
             className='jr_badge_avatar'
             src={props.badge.avatarUrl}
