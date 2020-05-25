@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { Link } from "react-router-dom";
+
 import './styles/NotFound.css'
 
 
@@ -13,7 +16,7 @@ function NotFound() {
                 <h1 className="_404_title">Error 404 </h1>
                 <h2 className="_404_subTitle">Página no encontrada</h2>
                 </div>
-                <a href="/" className="btn btn-primary _404_btn">Volver</a>
+                <Link to='/badges' className="btn btn-primary _404_btn">Volver</Link>
             </div>
             <div className="_404_image_container">
                 <img src={image_404} alt="404 Not Found" className="_404_image"/>
