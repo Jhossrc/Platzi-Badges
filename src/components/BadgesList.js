@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import BadgesListItem from "../components/BadgesListItem";
+
 class BadgesList extends React.Component {
   render() {
     if (this.props.badges.length === 0) {
@@ -19,20 +21,9 @@ class BadgesList extends React.Component {
       <div className='list-unstyled'>
         {this.props.badges.map((badge) => {
           return (
-            <div key={badge.id} className='jr_badge_container'>
-              <img
-                className='jr_badge_avatar'
-                src={badge.avatarUrl}
-                alt='Avatar'
-              />
-              <div className='jr_badge_info'>
-                <p className='jr_badge_name'>
-                  {badge.firstName} {badge.lastName}
-                </p>
-                <p className='jr_badge_twitter'>@{badge.twitter}</p>
-                <p className='jr_badge_jobTitle'>{badge.jobTitle}</p>
-              </div>
-            </div>
+            <Link className="text-reset text-text-decoration-none" to={`/badges/${badge.id}/edit`}>
+              <BadgesListItem badge={badge}/>
+            </Link>
           );
         })}
       </div>
