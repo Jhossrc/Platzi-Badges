@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
 
 import Badge from '../components/Badge';
+import DeleteBadgeModal from '../components/DeleteBadgeModal';
 
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function BadgeDetails(props) {
-
-  const logo = "https://static.platzi.com/media/tmp/class-files/git/platzi-badges/platzi-badges-20.DetallesDeUnBadge/src/images/platziconf-logo.svg";
+  const logo =
+    'https://static.platzi.com/media/tmp/class-files/git/platzi-badges/platzi-badges-20.DetallesDeUnBadge/src/images/platziconf-logo.svg';
   const badge = props.badge;
 
   return (
@@ -48,8 +48,14 @@ function BadgeDetails(props) {
                 </Link>
               </div>
               <div>
-                <button className='btn btn-danger'>Delete</button>
-                {ReactDOM.createPortal(<h1>Hola, realmente no estoy aquí</h1>, document.getElementById('modal'))}
+                <button onClick={props.onOpenModal} className='btn btn-danger'>
+                  Delete
+                </button>
+                <DeleteBadgeModal
+                  onClose={props.onCloseModal}
+                  isOpen={props.modalIsOpen}
+                  onDeleteBadge={props.onDeleteBadge}
+                />
               </div>
             </div>
           </div>

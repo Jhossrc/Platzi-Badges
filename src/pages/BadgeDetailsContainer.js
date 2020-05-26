@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./styles/BadgeDetails.css";
+import './styles/BadgeDetails.css';
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
 
@@ -9,41 +9,66 @@ import BadgeDetails from '../pages/BadgeDetails';
 import api from '../api';
 
 class BadgeDetailsContainer extends React.Component {
-
   state = {
     loading: true,
     error: null,
-    data: undefined
+    data: undefined,
+    modalIsOpen: false,
   };
 
   componentDidMount() {
     this.fetchData();
   }
 
-  fetchData= async () => {
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+    try {
+      const data = await api.badges.read(this.props.match.params.badgeId);
+      this.setState({ loading: false, data });
+    } catch (error) {
+      this.setState({ loading: false, error });
+    }
+  };
+
+  handleOpenModal = (e) => {
+    this.setState({ modalIsOpen: true });
+  };
+
+  handleCloseModal = (e) => {
+    this.setState({ modalIsOpen: false });
+  };
+
+  handleDeleteBadge = e => {
     this.setState({loading: true, error: null});
     try {
-      const data = await api.badges.read(
+      api.badges.remove(
         this.props.match.params.badgeId
       )
-      this.setState({loading: false, data})
+      this.setState({loading: false})
+      this.props.history.push('/badges')
     } catch (error) {
-      this.setState({loading: false, error})
+      this.setState({loading : false, error})
     }
+    
   }
 
   render() {
-
-    if ( this.state.loading ) {
-      return <PageLoading/>;
+    if (this.state.loading) {
+      return <PageLoading />;
     }
 
-    if ( this.state.error ) {
-      return <PageError error={this.state.error} />
+    if (this.state.error) {
+      return <PageError error={this.state.error} />;
     }
 
     return (
-      <BadgeDetails badge={this.state.data}/>
+      <BadgeDetails
+        modalIsOpen={this.state.modalIsOpen}
+        onOpenModal={this.handleOpenModal}
+        onCloseModal={this.handleCloseModal}
+        onDeleteBadge={this.handleDeleteBadge}
+        badge={this.state.data}
+      />
     );
   }
 }
