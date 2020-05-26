@@ -5,7 +5,22 @@ import DeleteBadgeModal from '../components/DeleteBadgeModal';
 
 import { Link } from 'react-router-dom';
 
+function useIncreaseCount(max) {
+  const [count, setCount] = React.useState(0);
+
+  if (count > max) {
+    setCount(0)
+  }
+  
+  return [count, setCount];
+}
+
 function BadgeDetails(props) {
+
+  const [count, setCount] = useIncreaseCount(4);
+
+  /* let [count, setCount] = React.useState(0) */
+  /* const count = 3; */
   const logo =
     'https://static.platzi.com/media/tmp/class-files/git/platzi-badges/platzi-badges-20.DetallesDeUnBadge/src/images/platziconf-logo.svg';
   const badge = props.badge;
@@ -41,6 +56,10 @@ function BadgeDetails(props) {
             <h2>Actions</h2>
             <div>
               <div>
+                <button onClick={()=> setCount(count + 1)} className="btn btn-secondary mb-4 mr-2">
+                  Increase Count: {count}
+                </button>
+
                 <Link
                   className='btn btn-primary mb-4'
                   to={`/badges/${badge.id}/edit`}>
