@@ -71,7 +71,7 @@ class Badges extends React.Component {
               </Link>
             </div>
             <BadgesList badges={this.state.data} />
-            {this.state.loading && 'Loading'}
+            {this.state.loading && "Loading"}
           </div>
         </div>
       </React.Fragment>
